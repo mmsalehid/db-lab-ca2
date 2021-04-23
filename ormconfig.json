@@ -8,5 +8,5 @@
     "entities": [
       "dist/db/entity/**/*.js"
     ],
-    "synchronize": true
+    "synchronize": false
   }
