@@ -1,27 +1,27 @@
-import { Entity, PrimaryGeneratedColumn, Column, BaseEntity, OneToMany, Timestamp, ManyToMany, ManyToOne, JoinColumn } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, BaseEntity, OneToMany, Timestamp, ManyToMany, ManyToOne, JoinColumn, Long } from 'typeorm';
 import UserEntity from './jobseekers_user.entity';
 import ProjectEntity from './project.entity';
 
 @Entity({ name: "offer" })
 export default class OfferEntity extends BaseEntity {
 
-    @PrimaryGeneratedColumn('uuid',{ name: "id" })
-    id: string;
+    @PrimaryGeneratedColumn({ name: "id" })
+    id: number;
 
-    @Column({name: "offer_price" })
-    offerPrice: BigInt;
+    @Column({name: "offer_price", type: "bigint" })
+    offerPrice: Long;
 
-    @Column({name: "deadline"})
+    @Column({name: "deadline", type: "timestamp"})
     deadline: Timestamp;
 
-    @Column({ name: "pre_payment" })
-    prePayment: BigInt;
+    @Column({ name: "pre_payment", type: "bigint"  })
+    prePayment: Long;
 
     @Column({ name: "is_accepted" })
     isAccepted: boolean;
 
-    @Column({name: "insurance"})
-    insurance: BigInt;
+    @Column({name: "insurance", type: "bigint" })
+    insurance: Long;
 
 
     @ManyToOne(type => UserEntity, user => user.createdProjects)

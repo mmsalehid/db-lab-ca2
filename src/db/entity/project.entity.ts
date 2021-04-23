@@ -5,13 +5,13 @@ import OfferEntity from './offer.entity';
 @Entity({ name: "project" })
 export default class ProjectEntity extends BaseEntity {
 
-    @PrimaryGeneratedColumn('uuid', { name: "id" })
-    id: string;
+    @PrimaryGeneratedColumn({ name: "id" })
+    id: number;
 
     @Column({ length: 50, name: "title" })
     title: string;
 
-    @Column({ name: "deadline" })
+    @Column({ name: "deadline", type: "timestamp" })
     deadline: Timestamp;
 
     @Column({ name: "required_skills" })
@@ -26,8 +26,8 @@ export default class ProjectEntity extends BaseEntity {
     @Column({ name: "status" })
     status: string;
 
-    @Column({ name: "min_insurance" })
-    minInsurance: BigInt;
+    @Column({ name: "min_insurance", type: "bigint"  })
+    minInsurance: Long;
 
     @Column({ name: "hardness" })
     hardness: string;

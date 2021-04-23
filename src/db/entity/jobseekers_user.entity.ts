@@ -16,7 +16,7 @@ export default class UserEntity extends BaseEntity {
     family_name: string;
 
     @Column({ name: "phone_number" })
-    PhoneNumber: string;
+    phoneNumber: string;
 
     @Column({ name: "email" })
     email: string;

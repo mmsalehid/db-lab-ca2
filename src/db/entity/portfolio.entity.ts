@@ -5,8 +5,8 @@ import UserEntity from './jobseekers_user.entity';
 @Entity({ name: "portfolio" })
 export default class PortfolioEntity extends BaseEntity {
 
-    @PrimaryGeneratedColumn('uuid',{ name: "id" })
-    id: string;
+    @PrimaryGeneratedColumn({ name: "id" })
+    id: number;
 
     @Column({name: "description" })
     description: string;
